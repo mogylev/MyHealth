@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -32,19 +32,13 @@ android {
 }
 
 dependencies {
-    implementation(Modules.core)
-    implementation(Modules.onboarding)
-    implementation(Modules.tracker)
-
     implementation(Base.coreKtx)
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.uiToolingPreview)
-//    implementation ('androidx.lifecycle:lifecycle-runtime-ktx:2.3.1')
     implementation(Compose.activityCompose)
     testImplementation(Testing.junit4)
     androidTestImplementation(Testing.junitAndroidExt)
     androidTestImplementation(Testing.composeUiTest)
-    debugImplementation("androidx.compose.ui:ui-tooling:$Compose.composeVersion")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$Compose.composeVersion")
+
 }

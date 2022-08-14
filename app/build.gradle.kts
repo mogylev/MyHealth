@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
+    id("kotlin-android")
 }
 android {
     compileSdk = ProjectConfig.compileSdk
@@ -51,18 +52,57 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.core))
+    implementation(project(Modules.onboarding))
+    implementation(project(Modules.tracker))
 
-    implementation(Base.coreKtx)
+    implementation(Compose.compiler)
     implementation(Compose.ui)
-    implementation(Compose.material)
     implementation(Compose.uiToolingPreview)
-//    implementation ('androidx.lifecycle:lifecycle-runtime-ktx:2.3.1')
+    implementation(Compose.hiltNavigationCompose)
+    implementation(Compose.material)
+    implementation(Compose.runtime)
+    implementation(Compose.navigation)
+    implementation(Compose.viewModelCompose)
     implementation(Compose.activityCompose)
-    testImplementation(Testing.junit4)
-    androidTestImplementation(Testing.junitAndroidExt)
-    androidTestImplementation(Testing.composeUiTest)
-    debugImplementation("androidx.compose.ui:ui-tooling:$Compose.composeVersion")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$Compose.composeVersion")
+
     implementation(DependencyInjection.hiltAndroid)
     kapt(DependencyInjection.hiltCompiler)
+
+    implementation(Base.coreKtx)
+    implementation(Base.appCompat)
+
+    implementation(OtherDependencies.coilCompose)
+
+    implementation(Base.material)
+
+    implementation(NetworkingDependencies.okHttp)
+    implementation(NetworkingDependencies.retrofit)
+    implementation(NetworkingDependencies.okHttpLoggingInterceptor)
+    implementation(NetworkingDependencies.moshiConverter)
+
+    kapt(DatabaseDependencies.roomCompiler)
+    implementation(DatabaseDependencies.roomKtx)
+    implementation(DatabaseDependencies.roomRuntime)
+
+    testImplementation(Testing.junit4)
+    testImplementation(Testing.junitAndroidExt)
+    testImplementation(Testing.truth)
+    testImplementation(Testing.coroutines)
+    testImplementation(Testing.turbine)
+    testImplementation(Testing.composeUiTest)
+    testImplementation(Testing.mockk)
+    testImplementation(Testing.mockWebServer)
+
+    androidTestImplementation(Testing.junit4)
+    androidTestImplementation(Testing.junitAndroidExt)
+    androidTestImplementation(Testing.truth)
+    androidTestImplementation(Testing.coroutines)
+    androidTestImplementation(Testing.turbine)
+    androidTestImplementation(Testing.composeUiTest)
+    androidTestImplementation(Testing.mockkAndroid)
+    androidTestImplementation(Testing.mockWebServer)
+    androidTestImplementation(Testing.hiltTesting)
+    kaptAndroidTest(DependencyInjection.hiltCompiler)
+    androidTestImplementation(Testing.testRunner)
 }

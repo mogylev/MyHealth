@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
     }
@@ -13,6 +14,13 @@ buildscript {
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
 
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
 tasks.register("clean", Delete::class) {
