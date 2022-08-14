@@ -13,5 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MyHealth"
-include ':app'
-include ':core'
+include(":app")
+include(":core")
+include(":onboarding")
+include(":tracker")
