@@ -53,6 +53,8 @@ android {
 
 dependencies {
     implementation(project(Modules.core))
+    implementation(project(Modules.splash))
+    implementation(project(Modules.login))
     implementation(project(Modules.onboarding))
     implementation(project(Modules.tracker))
 
@@ -93,6 +95,8 @@ dependencies {
     testImplementation(Testing.composeUiTest)
     testImplementation(Testing.mockk)
     testImplementation(Testing.mockWebServer)
+    implementation(DependencyInjection.hiltAndroid)
+    kapt(DependencyInjection.hiltCompiler)
 
     androidTestImplementation(Testing.junit4)
     androidTestImplementation(Testing.junitAndroidExt)

@@ -1,19 +1,25 @@
-//pluginManagement {
-//    repositories {
-//        gradlePluginPortal()
-//        google()
-//        mavenCentral()
-//    }
-//}
-//dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-//        google()
-//        mavenCentral()
-//    }
-//}
+include(":splash")
+
+pluginManagement{
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 rootProject.name = "MyHealth"
 include(":app")
 include(":core")
 include(":onboarding")
 include(":tracker")
+include(":login")
+include(":splash")

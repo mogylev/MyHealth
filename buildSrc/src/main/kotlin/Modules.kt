@@ -6,4 +6,9 @@ object Modules {
     const val onboarding = ":onboarding"
 
     const val tracker = ":tracker"
+
+    const val login = ":login"
+
+    val splash = ":splash"
+
 }
