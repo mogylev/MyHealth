@@ -1,10 +1,13 @@
-pluginManagement {
+include(":splash")
+
+pluginManagement{
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -12,6 +15,11 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "MyHealth"
-include ':app'
-include ':core'
+include(":app")
+include(":core")
+include(":onboarding")
+include(":tracker")
+include(":login")
+include(":splash")
