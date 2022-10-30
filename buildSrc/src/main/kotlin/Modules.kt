@@ -9,6 +9,4 @@ object Modules {
 
     const val login = ":login"
 
-    val splash = ":splash"
-
 }

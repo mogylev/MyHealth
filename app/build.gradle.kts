@@ -52,8 +52,8 @@ android {
 }
 
 dependencies {
+    implementation(platform(Compose.composeBom))
     implementation(project(Modules.core))
-    implementation(project(Modules.splash))
     implementation(project(Modules.login))
     implementation(project(Modules.onboarding))
     implementation(project(Modules.tracker))

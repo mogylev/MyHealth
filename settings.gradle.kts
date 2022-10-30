@@ -1,4 +1,3 @@
-include(":splash")
 
 pluginManagement{
     repositories {
@@ -22,4 +21,3 @@ include(":core")
 include(":onboarding")
 include(":tracker")
 include(":login")
-include(":splash")
