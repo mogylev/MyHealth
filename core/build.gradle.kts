@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation(platform(Compose.composeBom))
     implementation(Base.coreKtx)
     implementation(Compose.ui)
     implementation(Compose.material)
